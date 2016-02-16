@@ -147,16 +147,136 @@ If you have any questions, take a look at the <a href="https://github.com/Leafle
 
 <div class="container">
 
+<h2 id="features">Features</h2>
+
+<p>Leaflet doesn't try to do everything for everyone. Instead it focuses on making <em>the basic things work perfectly</em>.</p>
+
+<div class="features clearfix">
+    <div class="no-break">
+        <h3>Layers Out of the Box</h3>
+
+        <ul>
+            <li>Tile layers, WMS</li>
+            <li>Markers, Popups</li>
+            <li>Vector layers<span class="quiet">: polylines, polygons, circles, rectangles</span></li>
+            <li>Image overlays</li>
+            <li>GeoJSON</li>
+        </ul>
+    </div>
 
 
+    <div class="no-break">
+        <h3>Interaction Features</h3>
+
+        <ul>
+            <li>Drag panning with inertia</li>
+            <li>Scroll wheel zoom</li>
+            <li>Pinch-zoom on mobile</li>
+            <li>Double click zoom</li>
+            <li>Zoom to area <span class="quiet">(shift-drag)</span></li>
+            <li>Keyboard navigation</li>
+            <li>Events<span class="quiet">: click, mouseover, etc.</span></li>
+            <li>Marker dragging</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h3>Visual Features</h3>
+
+        <ul>
+            <li>Zoom and pan animation</li>
+            <li>Tile and popup fade animation</li>
+            <li>Very nice default design <span class="quiet">for markers, popups and map controls</span></li>
+            <li>Retina resolution support</li>
+        </ul>
+    </div>
+
+
+    <div class="no-break">
+        <h3>Customization Features</h3>
+
+        <ul>
+            <li>Pure CSS3 popups and controls <span class="quiet">for easy restyling</span></li>
+            <li>Image- and HTML-based markers</li>
+            <li><span class="quiet">A simple interface for</span> custom map layers and controls</li>
+            <li>Custom map projections <span class="quiet">(with <code>EPSG:3857/4326/3395</code> out of the box)</span></li>
+            <li>Powerful OOP facilities <span class="quiet">for extending existing classes</span></li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h3>Performance Features</h3>
+
+        <ul>
+            <li>Hardware acceleration on mobile <span class="quiet"> makes it feel as smooth as native apps</span></li>
+            <li>Utilizing CSS3 features <span class="quiet">to make panning and zooming really smooth</span></li>
+            <li>Smart polyline/polygon rendering <span class="quiet">with dynamic clipping and simplification makes it very fast</span></li>
+            <li>Modular build system<span class="quiet"> for leaving out features you don't need</span></li>
+            <li>Tap delay elimination on mobile</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h3>Map Controls</h3>
+
+        <ul>
+            <li>Zoom buttons</li>
+            <li>Attribution</li>
+            <li>Layer switcher</li>
+            <li>Scale</li>
+        </ul>
+    </div>
+
+
+    <div class="no-break">
+        <h3>Browser Support</h3>
+
+        <h4>Desktop</h4>
+
+        <ul>
+            <li>Chrome</li>
+            <li>Firefox</li>
+            <li>Safari 5+</li>
+            <li>Opera 12+</li>
+            <li>IE 7&ndash;11</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Mobile</h4>
+
+        <ul>
+            <li>Safari for iOS 7+</li>
+            <li>Android browser 2.2+,&nbsp;3.1+,&nbsp;4+</li>
+            <li>Chrome for mobile</li>
+            <li>Firefox for mobile</li>
+            <li>IE10+ for Win8 devices</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h3>Misc</h3>
+
+        <ul>
+            <li>Extremely lightweight</li>
+            <li>No external dependencies</li>
+        </ul>
+    </div>
 </div>
 
-<nav class="ext-links">
-  <a class="ext-link twitter" href="http://twitter.com/LeafletJS" title="Follow LeafletJS on Twitter"><img alt="Follow LeafletJS on Twitter" src="docs/images/twitter-round.png" width="46" /></a>
-  <a class="ext-link github" href="http://github.com/Leaflet/Leaflet" title="View Source on GitHub"><img alt="View Source on GitHub" src="docs/images/github-round.png" width="46" /></a>
-  <a class="ext-link forum" href="https://stackoverflow.com/questions/tagged/leaflet" title="Ask for help on Stack Overflow"><img alt="Leaflet questions on Stack Overflow" src="docs/images/forum-round.png" width="46" /></a>
-</nav>
 
+<script>
+	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+
+	var map = L.map('map').setView([51.505, -0.159], 15).addLayer(osm);
+
+	L.marker([51.504, -0.159])
+		.addTo(map)
+		.bindPopup('A pretty CSS3 popup.<br />Easily customizable.')
+		.openPopup();
+</script>
 <script>
 	hljs.configure({tabReplace: '    '});
 	hljs.initHighlighting();
